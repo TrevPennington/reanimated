@@ -1,0 +1,25 @@
+import React from "react";
+import { View, Image } from "react-native";
+import usePhoto from "../../context/photo-context";
+import { SharedElement } from "react-navigation-shared-element";
+
+const Detail = () => {
+  const { selectedPhoto } = usePhoto();
+  const { id, url } = selectedPhoto || { id: "", url: "" };
+
+  return (
+    <View style={{ flex: 1 }}>
+      <SharedElement id={id} style={{ flex: 1 }}>
+        <Image
+          style={{ flex: 1 }}
+          source={{
+            uri: url,
+          }}
+          resizeMode="cover"
+        />
+      </SharedElement>
+    </View>
+  );
+};
+
+export default Detail;
