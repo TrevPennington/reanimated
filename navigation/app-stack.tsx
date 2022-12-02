@@ -5,6 +5,7 @@ import SharedStack from "./shared-stack";
 import SharedGestureStack from "./shared-gesture-stack";
 import Navigator from "../screens/navigator";
 import Interpolation from "../screens/interpolate";
+import CourseStack from "./course-stack";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ const AppStack = () => {
       >
         <Stack.Group screenOptions={{ headerShown: false }}>
           <Stack.Screen name="navigator" component={Navigator} />
+          <Stack.Screen name="courses" component={CourseStack} />
           <Stack.Screen name="basic" component={BasicStack} />
           <Stack.Screen name="shared" component={SharedStack} />
           <Stack.Screen name="shared-gesture" component={SharedGestureStack} />

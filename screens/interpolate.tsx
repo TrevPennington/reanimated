@@ -17,14 +17,27 @@ const Interpolate = () => {
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 
+  const startingX = useSharedValue(0);
+  const startingY = useSharedValue(0);
+
   const onGestureEvent = useAnimatedGestureHandler({
+    onStart: ({ translationX, translationY }) => {
+      // translateY.value
+      // startingX.value = translateX.value;
+      // console.log(translationX);
+    },
     onActive: ({ translationX, translationY }) => {
-      translateX.value = translationX;
-      translateY.value = translationY;
+      // translateX.value = translationX;
+      // translateY.value = translationY;
+
+      translateX.value = startingX.value + translationX;
+      translateY.value = startingY.value + translationY;
     },
     onEnd: () => {
-      translateX.value = withTiming(0);
-      translateY.value = withTiming(0);
+      // translateX.value = withTiming(0);
+      // translateY.value = withTiming(0);
+      startingY.value = translateY.value;
+      startingX.value = translateX.value;
     },
   });
 

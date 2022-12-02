@@ -8,6 +8,12 @@ const Navigator = () => {
 
   return (
     <View style={{ flex: 1, paddingTop: 60, backgroundColor: "white" }}>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.push("courses")}
+      >
+        <Text style={styles.buttonText}>courses</Text>
+      </Pressable>
       <Pressable style={styles.button} onPress={() => navigation.push("basic")}>
         <Text style={styles.buttonText}>basic nav</Text>
       </Pressable>
