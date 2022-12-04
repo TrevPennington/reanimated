@@ -10,6 +10,12 @@ const CoursesNav = () => {
       <Pressable style={styles.button} onPress={() => navigation.push("fling")}>
         <Text style={styles.buttonText}>lesson 1 - Fling</Text>
       </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.push("transition")}
+      >
+        <Text style={styles.buttonText}>lesson 2 - Transitions</Text>
+      </Pressable>
     </View>
   );
 };
